@@ -1,0 +1,85 @@
+#Callbacks
+def on_canvas_click(x, y):
+    if -150 <= x <= -50 and -25 <= y <= 25:
+        clearcanv()
+        draw_square()
+        hideturtle()
+    elif -30 <= x <= 70 and -25 <= y <= 25:
+        clearcanv()
+        draw_circle()
+        hideturtle()
+    elif 90 <= x <= 190 and -25 <= y <= 25:
+        clearcanv()
+        draw_triangle()
+        hideturtle()
+        
+#-------------------
+# Functions n stuff
+#-------------------
+
+
+#This basically draws a big white rectangle under da buttons
+#"clearing" whatever was drawn, adding more layers and also RAM
+#Call this before your draw_shape functions with onclick
+#|
+#V
+def clearcanv():
+    penup()
+    color("white")
+    begin_fill()
+    goto(-200,-25)
+    goto(200,-25)
+    goto(200,-200)
+    goto(-200,-200)
+    goto(-200,-25)
+    end_fill()
+
+def draw_square():
+    penup()
+    goto(-25,-150)
+    color("red")
+    begin_fill()
+    pendown()
+    for s in range(4):
+        forward(100)
+        left(90)
+    end_fill()
+    
+def draw_circle():
+    goto(0,-150)
+    color("green")
+    begin_fill()
+    circle(50)
+    end_fill()
+    
+def draw_triangle():
+    goto(0,-150)
+    color("blue")
+    begin_fill()
+    circle(50, 360, 3)
+    end_fill()
+    
+
+#Draw buttons function
+def draw_button(x, y, width, height, button_color):
+    penup()
+    goto(x, y)
+    pendown()
+    color(button_color)
+    begin_fill()
+    for _ in range(2):
+        forward(width)
+        left(90)
+        forward(height)
+        left(90)
+    end_fill()
+
+# Drawing buttons
+speed(0)
+draw_button(-150, -25, 100, 50, "red")
+draw_button(-30, -25, 100, 50, "green")
+draw_button(90, -25, 100, 50, "blue")
+
+#dumb click handler thingy because this isn't a real IDE
+canvas = getscreen()
+canvas.onclick(on_canvas_click)
