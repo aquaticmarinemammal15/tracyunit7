@@ -1,0 +1,60 @@
+def draw_circle(circle_color, radius, x, y):
+    penup() 
+    goto(x, y) 
+    pendown() 
+    color(circle_color)
+    begin_fill()
+    circle(radius)
+    end_fill()
+def draw_smile(x, y, radius):
+    penup()
+    goto(x, y)
+    pendown()
+    setheading(-60)
+    circle(radius, 120)  
+def draw_smiley_face():
+    speed('fastest')
+    draw_circle("yellow", 100, 0, -100)
+    draw_circle("black", 10, -40, 35)
+    draw_circle("black", 10, 40, 35)
+    penup()
+    goto(-40, -20)
+    pendown()
+    color("black")
+    draw_smile(-40, -40, 40)
+
+
+
+def draw_frowny_face():
+    def draw_circle(circle_color, radius, x, y):
+        penup()
+        goto(x, y)
+        pendown()
+        color(circle_color)  # Ensure 'color' is not used as a variable
+        begin_fill()
+        circle(radius)
+        end_fill()
+
+    def draw_frown(x, y, radius):
+        penup()
+        goto(x, y)
+        pendown()
+        setheading(240)  # Changed heading to 240 for the frown
+        circle(radius, -120)  # Negative extent to draw the frown
+
+    speed('fastest')
+    draw_circle("yellow", 100, 0, -100)
+    draw_circle("black", 10, -40, 35)
+    draw_circle("black", 10, 40, 35)
+    draw_frown(-40, -50, 40)  # Adjust the position for the frown
+
+x = input("Are you happy, yes or no: ")
+if x == "yes":
+    draw_smiley_face()
+if x == "Yes":
+    draw_smiley_face()
+
+elif x == "no":
+    draw_frowny_face()
+elif x == "No":
+    draw_frowny_face()
