@@ -1,0 +1,14 @@
+penup()
+name = input("Enter your name: ")
+first_letter = input("Enter the first letter of your name: ")
+adjective = input("Enter an adjective that starts with the first letter of your name: ")
+if adjective[0].lower() == first_letter.lower():
+    name = name.capitalize()
+    adjective = adjective.capitalize()
+    adjective = str(adjective)
+    name = str(name)
+    goto(-100,0)
+    write(adjective + " " + name, font =("Arial", 20))
+    goto(0,-50)
+else:
+    print("The adjective does not start with the same letter as your name.")
