@@ -1,0 +1,43 @@
+number = input("Enter a number: ")
+if number.isdigit():
+    print("it's a number, good job")
+else:
+    print("Not a number, 1 will be used")
+    number = 1
+number2 = input("Enter another number: ")
+if number2.isdigit():
+    print("Yuh")
+else: 
+    print("Not a number, 1 will be used")
+    number2 = 1
+    
+
+number = int(number)
+number2 = int(number2)
+
+def add():
+    sum = number + number2
+    print(sum)
+
+def subtract():
+    sub = number - number2
+    print(sub)
+    
+def multiply():
+    mult = number * number2
+    print(mult)
+    
+def divide():
+    div = number / number2
+    print(div)
+    
+math = input("Pick what math u doin (+ ,- ,x , or /): ")
+
+if math == "+":
+    add()
+elif math == "-":
+    subtract()
+elif math == "x":
+    multiply()
+elif math == "/":
+    divide()
