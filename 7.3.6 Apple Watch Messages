@@ -1,0 +1,45 @@
+speed(0)
+
+
+def add_time():
+    color("white")
+    hours = randrange(0, 23)
+    minutes = randrange(0, 59)
+    if hours > 9:
+        goto(30, 45)
+    else:
+        goto(40, 45)
+    if minutes < 10:
+        minutes = "0" + str(minutes)
+    write(str(hours) + ":" + str(minutes), font=("Arial", 30, "bold"), align="center")
+    return hours
+
+def add_message(hour, name):
+    color("#5A4B9E")
+    goto(-65, -60)
+    begin_fill()
+    for i in range(2):
+        forward(130)
+        circle(20, 90)
+        forward(50)
+        circle(20, 90)
+    end_fill()
+
+    if 6 <= hour < 12:
+        message = "Good morning, " + name + "!"
+    elif 12 <= hour < 18:
+        message = "Good afternoon, " + name + "!"
+    elif 18 <= hour < 22:
+        message = "Good evening, " + name + "!"
+    else:
+        message = "Good night, " + name + "!"
+
+    goto(0, -20) 
+    color("white")
+    write(message, font=("Arial", 10, "normal"), align="center")
+
+# Main program execution
+draw_background()
+hour = add_time()
+user_name = input("Enter the name of the watch owner: ")
+add_message(hour, user_name)
