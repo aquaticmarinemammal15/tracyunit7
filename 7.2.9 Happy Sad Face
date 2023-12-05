@@ -1,0 +1,56 @@
+penup()
+happy = input("Are you happy, yes or no: ")
+speed(0)
+#happy face function
+def happy_face():
+    color("yellow")
+    goto(0,-100)
+    begin_fill()
+    circle(100)
+    end_fill()
+    #eyes
+    goto(-35,25)
+    color("black")
+    begin_fill()
+    circle(10)
+    end_fill()
+    goto(35,25)
+    begin_fill()
+    circle(10)
+    end_fill()
+    #mouth
+    seth(300)
+    goto(-35,-40)
+    pendown()
+    pensize(5)
+    circle(40,120)
+
+def sad_face():
+    color("yellow")
+    goto(0,-100)
+    begin_fill()
+    circle(100)
+    end_fill()
+    #eyes
+    goto(-35,25)
+    color("black")
+    begin_fill()
+    circle(10)
+    end_fill()
+    goto(35,25)
+    begin_fill()
+    circle(10)
+    end_fill()
+    #mouth
+    seth(120)
+    goto(30,-40)
+    pendown()
+    pensize(5)
+    circle(40,120)
+
+if happy == "yes":
+    happy_face()
+elif happy == "no":
+    sad_face()
+else:
+    print("yes or no, thick skull")
