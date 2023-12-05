@@ -1,0 +1,13 @@
+def is_float(string):
+    try:
+        float(string)
+        return True
+    except ValueError:
+        return False
+diameter_input = input("Enter a diameter for the circle: ")
+if not diameter_input.isdigit() and not is_float(diameter_input):
+    print("Please enter a valid number for the diameter.")
+else:
+    diameter = float(diameter_input)
+    radius = diameter / 2
+    circle(radius)
