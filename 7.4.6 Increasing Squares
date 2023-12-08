@@ -1,0 +1,12 @@
+length = 50
+speed(0)
+while length <= 350:
+    starting_x = -length / 2
+    starting_y = length / 2
+    penup()
+    goto(starting_x, starting_y)
+    pendown()
+    for _ in range(4):
+        forward(length) 
+        right(90)      
+    length += 50
