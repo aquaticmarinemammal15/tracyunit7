@@ -1,0 +1,16 @@
+secret_number = 8
+user_number = int(input("Enter a number 1-10: "))  # Convert input to an integer
+
+while user_number != secret_number:
+    print("Incorrect number, please try again")
+    user_number = int(input("Enter a number 1-10: "))  # Convert subsequent inputs to integers as well
+
+print("Correct number!")
+penup()
+goto(-50,0)
+pensize(5)
+pendown()
+color("green")
+pendown()
+goto(0,-50)
+goto(50,50)
