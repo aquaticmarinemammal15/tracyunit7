@@ -1,0 +1,11 @@
+while True:
+    width = input("Enter the width of the square: ")
+
+    if width.isdigit():
+        width = int(width)
+        for x in range(4):
+            forward(width)
+            right(90)
+        break 
+    else:
+        print("Invalid input. Please enter a valid number.")
